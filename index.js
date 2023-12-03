@@ -1,51 +1,3 @@
-// const express = require('express')
-// var cors = require('cors')
-// var bodyParser = require('body-parser')
-// const app = express()
-// app.use(cors())
-// app.use(bodyParser.urlencoded({ extended: false }))
-// app.use(bodyParser.json())
-// const mongoose = require('mongoose');
-
-// const schema = new mongoose.Schema({
-//     name: {
-//         type: String,
-//         require: true
-//     },
-// });
-
-
-
-
-// const dbCunnect = async () => {
-//     await mongoose.connect('mongodb+srv://juilary:zOUbn7gxDjr2qaIV@cluster0.vdfwpbk.mongodb.net/juilaris?retryWrites=true&w=majority');
-//     console.log('db cunnect')
-// }
-
-// const productmodel = mongoose.model('products', schema);
-
-
-
-
-
-// app.get('/', (req, res) => {
-//     const allCard = productmodel.find()
-//     console.log(allCard)
-//     res.send()
-// })
-
-
-
-
-
-// app.listen((7000), async () => {
-//     await dbCunnect();
-//     console.log('Local host run 7000')
-// })
-
-
-
-
 const express = require('express')
 var cors = require('cors')
 var bodyParser = require('body-parser')
@@ -238,7 +190,8 @@ app.get('/buyproduct', async (req, res) => {
 app.delete('/delet/:id', async (req, res) => {
     try {
         const id = req.params.id;
-        await userModel.findByIdAndDelete({ _id: id })
+        console.log(typeof id)
+        // await userModel.findByIdAndDelete({ _id: id })
     } catch (error) {
         res.status(502).send(error.message)
     }
